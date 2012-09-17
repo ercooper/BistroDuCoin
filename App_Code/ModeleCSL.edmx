@@ -1,0 +1,1144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModeleCSL.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ModeleCSLStoreContainer">
+          <EntitySet Name="ActiviteJeu" EntityType="ModeleCSL.Store.ActiviteJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CarteJeu" EntityType="ModeleCSL.Store.CarteJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CommandeJeu" EntityType="ModeleCSL.Store.CommandeJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ElementsCommandeJeu" EntityType="ModeleCSL.Store.ElementsCommandeJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GroupeJeu" EntityType="ModeleCSL.Store.GroupeJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JourJeu" EntityType="ModeleCSL.Store.JourJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LocalJeu" EntityType="ModeleCSL.Store.LocalJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MembreFamilleJeu1" EntityType="ModeleCSL.Store.MembreFamilleJeu1" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NouvelleJeu" EntityType="ModeleCSL.Store.NouvelleJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProvinceJeu" EntityType="ModeleCSL.Store.ProvinceJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReservationJeu" EntityType="ModeleCSL.Store.ReservationJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SessionJeu" EntityType="ModeleCSL.Store.SessionJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypeActiviteJeu" EntityType="ModeleCSL.Store.TypeActiviteJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TypeUtilisateurJeu" EntityType="ModeleCSL.Store.TypeUtilisateurJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UtilisateurJeu" EntityType="ModeleCSL.Store.UtilisateurJeu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UtilisateurJeu_Employe" EntityType="ModeleCSL.Store.UtilisateurJeu_Employe" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ActiviteTypeActivite" Association="ModeleCSL.Store.FK_ActiviteTypeActivite">
+            <End Role="TypeActiviteJeu" EntitySet="TypeActiviteJeu" />
+            <End Role="ActiviteJeu" EntitySet="ActiviteJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommandeCarte" Association="ModeleCSL.Store.FK_CommandeCarte">
+            <End Role="CarteJeu" EntitySet="CarteJeu" />
+            <End Role="CommandeJeu" EntitySet="CommandeJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommandeElementsCommande" Association="ModeleCSL.Store.FK_CommandeElementsCommande">
+            <End Role="CommandeJeu" EntitySet="CommandeJeu" />
+            <End Role="ElementsCommandeJeu" EntitySet="ElementsCommandeJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employe_inherits_Utilisateur" Association="ModeleCSL.Store.FK_Employe_inherits_Utilisateur">
+            <End Role="UtilisateurJeu" EntitySet="UtilisateurJeu" />
+            <End Role="UtilisateurJeu_Employe" EntitySet="UtilisateurJeu_Employe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupeActivite" Association="ModeleCSL.Store.FK_GroupeActivite">
+            <End Role="ActiviteJeu" EntitySet="ActiviteJeu" />
+            <End Role="GroupeJeu" EntitySet="GroupeJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupeElementsCommande" Association="ModeleCSL.Store.FK_GroupeElementsCommande">
+            <End Role="GroupeJeu" EntitySet="GroupeJeu" />
+            <End Role="ElementsCommandeJeu" EntitySet="ElementsCommandeJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupeReservation" Association="ModeleCSL.Store.FK_GroupeReservation">
+            <End Role="GroupeJeu" EntitySet="GroupeJeu" />
+            <End Role="ReservationJeu" EntitySet="ReservationJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationJour" Association="ModeleCSL.Store.FK_ReservationJour">
+            <End Role="JourJeu" EntitySet="JourJeu" />
+            <End Role="ReservationJeu" EntitySet="ReservationJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationLocal" Association="ModeleCSL.Store.FK_ReservationLocal">
+            <End Role="LocalJeu" EntitySet="LocalJeu" />
+            <End Role="ReservationJeu" EntitySet="ReservationJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationSession" Association="ModeleCSL.Store.FK_ReservationSession">
+            <End Role="SessionJeu" EntitySet="SessionJeu" />
+            <End Role="ReservationJeu" EntitySet="ReservationJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UtilisateurCommande" Association="ModeleCSL.Store.FK_UtilisateurCommande">
+            <End Role="UtilisateurJeu" EntitySet="UtilisateurJeu" />
+            <End Role="CommandeJeu" EntitySet="CommandeJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UtilisateurmembreFamille" Association="ModeleCSL.Store.FK_UtilisateurmembreFamille">
+            <End Role="UtilisateurJeu" EntitySet="UtilisateurJeu" />
+            <End Role="MembreFamilleJeu1" EntitySet="MembreFamilleJeu1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UtilisateurNouvelle" Association="ModeleCSL.Store.FK_UtilisateurNouvelle">
+            <End Role="UtilisateurJeu" EntitySet="UtilisateurJeu" />
+            <End Role="NouvelleJeu" EntitySet="NouvelleJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UtilisateurProvince" Association="ModeleCSL.Store.FK_UtilisateurProvince">
+            <End Role="ProvinceJeu" EntitySet="ProvinceJeu" />
+            <End Role="UtilisateurJeu" EntitySet="UtilisateurJeu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UtilisateurTypeUtilisateur" Association="ModeleCSL.Store.FK_UtilisateurTypeUtilisateur">
+            <End Role="TypeUtilisateurJeu" EntitySet="TypeUtilisateurJeu" />
+            <End Role="UtilisateurJeu" EntitySet="UtilisateurJeu" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ActiviteJeu">
+          <Key>
+            <PropertyRef Name="idActivite" />
+          </Key>
+          <Property Name="idActivite" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nomActiviteFr" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="nomActiviteEn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="descriptionActiviteFr" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="descriptionActiviteEn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ageMinimum" Type="int" Nullable="false" />
+          <Property Name="ageMaximum" Type="int" Nullable="false" />
+          <Property Name="sessionHiver" Type="bit" Nullable="false" />
+          <Property Name="sessionPrintemps" Type="bit" Nullable="false" />
+          <Property Name="sessionEte" Type="bit" Nullable="false" />
+          <Property Name="sessionAutomne" Type="bit" Nullable="false" />
+          <Property Name="prix" Type="decimal" Nullable="false" />
+          <Property Name="dateDebut" Type="datetime" Nullable="false" />
+          <Property Name="dateFin" Type="datetime" Nullable="false" />
+          <Property Name="TypeActivite_idType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CarteJeu">
+          <Key>
+            <PropertyRef Name="idCarte" />
+          </Key>
+          <Property Name="idCarte" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nomCarte" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommandeJeu">
+          <Key>
+            <PropertyRef Name="noCommande" />
+          </Key>
+          <Property Name="noCommande" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dateCommande" Type="datetime" Nullable="false" />
+          <Property Name="noCarte" Type="int" Nullable="false" />
+          <Property Name="moisExpiration" Type="int" Nullable="false" />
+          <Property Name="anneeExpiration" Type="int" Nullable="false" />
+          <Property Name="Utilisateur_idUtilisateur" Type="int" Nullable="false" />
+          <Property Name="Carte_idCarte" Type="int" Nullable="false" />
+          <Property Name="titulaireCarte" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ElementsCommandeJeu">
+          <Key>
+            <PropertyRef Name="idElementCommande" />
+          </Key>
+          <Property Name="dateAjout" Type="datetime" Nullable="false" />
+          <Property Name="prixPaye" Type="decimal" Nullable="false" />
+          <Property Name="idElementCommande" Type="int" Nullable="false" />
+          <Property Name="Commande_noCommande" Type="int" Nullable="false" />
+          <Property Name="Groupe_idGroupe" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupeJeu">
+          <Key>
+            <PropertyRef Name="idGroupe" />
+          </Key>
+          <Property Name="idGroupe" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="capaciteGroupe" Type="int" Nullable="false" />
+          <Property Name="commentaire" Type="nvarchar(max)" />
+          <Property Name="Activite_idActivite" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JourJeu">
+          <Key>
+            <PropertyRef Name="idJour" />
+          </Key>
+          <Property Name="idJour" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nomJourFr" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="nomJourEn" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LocalJeu">
+          <Key>
+            <PropertyRef Name="idLocal" />
+          </Key>
+          <Property Name="idLocal" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descriptionLocal" Type="nvarchar(max)" />
+          <Property Name="reservableClient" Type="bit" Nullable="false" />
+          <Property Name="nomLocal" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="capaciteMax" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MembreFamilleJeu1">
+          <Key>
+            <PropertyRef Name="idMembreFamille" />
+          </Key>
+          <Property Name="nomMembreFamille" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="prenomMembreFamille" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="dateNaissanceMembreFamille" Type="datetime" Nullable="false" />
+          <Property Name="dateAdhesionMembreFamille" Type="datetime" Nullable="false" />
+          <Property Name="estConjoint" Type="bit" Nullable="false" />
+          <Property Name="idMembreFamille" Type="int" Nullable="false" />
+          <Property Name="Utilisateur_idUtilisateur" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NouvelleJeu">
+          <Key>
+            <PropertyRef Name="idNouvelle" />
+          </Key>
+          <Property Name="idNouvelle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="titreFr" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="texteFr" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="titreEn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="texteEn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Utilisateur_idUtilisateur" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProvinceJeu">
+          <Key>
+            <PropertyRef Name="idProvince" />
+          </Key>
+          <Property Name="idProvince" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nomProvince" Type="nvarchar" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="ReservationJeu">
+          <Key>
+            <PropertyRef Name="idReservation" />
+          </Key>
+          <Property Name="idReservation" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="heureDebut" Type="time" Nullable="false" />
+          <Property Name="heureFin" Type="time" Nullable="false" />
+          <Property Name="dateReservation" Type="datetime" />
+          <Property Name="Groupe_idGroupe" Type="int" Nullable="false" />
+          <Property Name="Local_idLocal" Type="int" Nullable="false" />
+          <Property Name="Jour_idJour" Type="int" Nullable="false" />
+          <Property Name="Session_idSession" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SessionJeu">
+          <Key>
+            <PropertyRef Name="idSession" />
+          </Key>
+          <Property Name="idSession" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dateDebut" Type="datetime" Nullable="false" />
+          <Property Name="dateFin" Type="datetime" Nullable="false" />
+          <Property Name="nomSession" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeActiviteJeu">
+          <Key>
+            <PropertyRef Name="idType" />
+          </Key>
+          <Property Name="idType" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nomType" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeUtilisateurJeu">
+          <Key>
+            <PropertyRef Name="idType" />
+          </Key>
+          <Property Name="idType" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nomType" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UtilisateurJeu">
+          <Key>
+            <PropertyRef Name="idUtilisateur" />
+          </Key>
+          <Property Name="idUtilisateur" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="identifiant" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="prenom" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom" Type="nvarchar" Nullable="false" MaxLength="75" />
+          <Property Name="noCivique" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="rue" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ville" Type="nvarchar" Nullable="false" MaxLength="75" />
+          <Property Name="codePostal" Type="nvarchar" Nullable="false" MaxLength="6" />
+          <Property Name="noTelephone" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="dateNaissance" Type="datetime" Nullable="false" />
+          <Property Name="dateAdhesion" Type="datetime" Nullable="false" />
+          <Property Name="motPasse" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Province_idProvince" Type="int" Nullable="false" />
+          <Property Name="TypeUtilisateur_idType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UtilisateurJeu_Employe">
+          <Key>
+            <PropertyRef Name="idUtilisateur" />
+          </Key>
+          <Property Name="noEmploye" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dateEmbauche" Type="datetime" Nullable="false" />
+          <Property Name="idUtilisateur" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ActiviteTypeActivite">
+          <End Role="TypeActiviteJeu" Type="ModeleCSL.Store.TypeActiviteJeu" Multiplicity="1" />
+          <End Role="ActiviteJeu" Type="ModeleCSL.Store.ActiviteJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeActiviteJeu">
+              <PropertyRef Name="idType" />
+            </Principal>
+            <Dependent Role="ActiviteJeu">
+              <PropertyRef Name="TypeActivite_idType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommandeCarte">
+          <End Role="CarteJeu" Type="ModeleCSL.Store.CarteJeu" Multiplicity="1" />
+          <End Role="CommandeJeu" Type="ModeleCSL.Store.CommandeJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarteJeu">
+              <PropertyRef Name="idCarte" />
+            </Principal>
+            <Dependent Role="CommandeJeu">
+              <PropertyRef Name="Carte_idCarte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommandeElementsCommande">
+          <End Role="CommandeJeu" Type="ModeleCSL.Store.CommandeJeu" Multiplicity="1" />
+          <End Role="ElementsCommandeJeu" Type="ModeleCSL.Store.ElementsCommandeJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommandeJeu">
+              <PropertyRef Name="noCommande" />
+            </Principal>
+            <Dependent Role="ElementsCommandeJeu">
+              <PropertyRef Name="Commande_noCommande" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employe_inherits_Utilisateur">
+          <End Role="UtilisateurJeu" Type="ModeleCSL.Store.UtilisateurJeu" Multiplicity="1" />
+          <End Role="UtilisateurJeu_Employe" Type="ModeleCSL.Store.UtilisateurJeu_Employe" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UtilisateurJeu">
+              <PropertyRef Name="idUtilisateur" />
+            </Principal>
+            <Dependent Role="UtilisateurJeu_Employe">
+              <PropertyRef Name="idUtilisateur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupeActivite">
+          <End Role="ActiviteJeu" Type="ModeleCSL.Store.ActiviteJeu" Multiplicity="1" />
+          <End Role="GroupeJeu" Type="ModeleCSL.Store.GroupeJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActiviteJeu">
+              <PropertyRef Name="idActivite" />
+            </Principal>
+            <Dependent Role="GroupeJeu">
+              <PropertyRef Name="Activite_idActivite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupeElementsCommande">
+          <End Role="GroupeJeu" Type="ModeleCSL.Store.GroupeJeu" Multiplicity="1" />
+          <End Role="ElementsCommandeJeu" Type="ModeleCSL.Store.ElementsCommandeJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupeJeu">
+              <PropertyRef Name="idGroupe" />
+            </Principal>
+            <Dependent Role="ElementsCommandeJeu">
+              <PropertyRef Name="Groupe_idGroupe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupeReservation">
+          <End Role="GroupeJeu" Type="ModeleCSL.Store.GroupeJeu" Multiplicity="1" />
+          <End Role="ReservationJeu" Type="ModeleCSL.Store.ReservationJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupeJeu">
+              <PropertyRef Name="idGroupe" />
+            </Principal>
+            <Dependent Role="ReservationJeu">
+              <PropertyRef Name="Groupe_idGroupe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationJour">
+          <End Role="JourJeu" Type="ModeleCSL.Store.JourJeu" Multiplicity="1" />
+          <End Role="ReservationJeu" Type="ModeleCSL.Store.ReservationJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JourJeu">
+              <PropertyRef Name="idJour" />
+            </Principal>
+            <Dependent Role="ReservationJeu">
+              <PropertyRef Name="Jour_idJour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationLocal">
+          <End Role="LocalJeu" Type="ModeleCSL.Store.LocalJeu" Multiplicity="1" />
+          <End Role="ReservationJeu" Type="ModeleCSL.Store.ReservationJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocalJeu">
+              <PropertyRef Name="idLocal" />
+            </Principal>
+            <Dependent Role="ReservationJeu">
+              <PropertyRef Name="Local_idLocal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationSession">
+          <End Role="SessionJeu" Type="ModeleCSL.Store.SessionJeu" Multiplicity="1" />
+          <End Role="ReservationJeu" Type="ModeleCSL.Store.ReservationJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SessionJeu">
+              <PropertyRef Name="idSession" />
+            </Principal>
+            <Dependent Role="ReservationJeu">
+              <PropertyRef Name="Session_idSession" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UtilisateurCommande">
+          <End Role="UtilisateurJeu" Type="ModeleCSL.Store.UtilisateurJeu" Multiplicity="1" />
+          <End Role="CommandeJeu" Type="ModeleCSL.Store.CommandeJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UtilisateurJeu">
+              <PropertyRef Name="idUtilisateur" />
+            </Principal>
+            <Dependent Role="CommandeJeu">
+              <PropertyRef Name="Utilisateur_idUtilisateur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UtilisateurmembreFamille">
+          <End Role="UtilisateurJeu" Type="ModeleCSL.Store.UtilisateurJeu" Multiplicity="1" />
+          <End Role="MembreFamilleJeu1" Type="ModeleCSL.Store.MembreFamilleJeu1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UtilisateurJeu">
+              <PropertyRef Name="idUtilisateur" />
+            </Principal>
+            <Dependent Role="MembreFamilleJeu1">
+              <PropertyRef Name="Utilisateur_idUtilisateur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UtilisateurNouvelle">
+          <End Role="UtilisateurJeu" Type="ModeleCSL.Store.UtilisateurJeu" Multiplicity="1" />
+          <End Role="NouvelleJeu" Type="ModeleCSL.Store.NouvelleJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UtilisateurJeu">
+              <PropertyRef Name="idUtilisateur" />
+            </Principal>
+            <Dependent Role="NouvelleJeu">
+              <PropertyRef Name="Utilisateur_idUtilisateur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UtilisateurProvince">
+          <End Role="ProvinceJeu" Type="ModeleCSL.Store.ProvinceJeu" Multiplicity="1" />
+          <End Role="UtilisateurJeu" Type="ModeleCSL.Store.UtilisateurJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProvinceJeu">
+              <PropertyRef Name="idProvince" />
+            </Principal>
+            <Dependent Role="UtilisateurJeu">
+              <PropertyRef Name="Province_idProvince" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UtilisateurTypeUtilisateur">
+          <End Role="TypeUtilisateurJeu" Type="ModeleCSL.Store.TypeUtilisateurJeu" Multiplicity="1" />
+          <End Role="UtilisateurJeu" Type="ModeleCSL.Store.UtilisateurJeu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeUtilisateurJeu">
+              <PropertyRef Name="idType" />
+            </Principal>
+            <Dependent Role="UtilisateurJeu">
+              <PropertyRef Name="TypeUtilisateur_idType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModeleCSL" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ModeleCSLContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UtilisateurJeu" EntityType="ModeleCSL.Utilisateur" />
+          <EntitySet Name="ProvinceJeu" EntityType="ModeleCSL.Province" />
+          <AssociationSet Name="UtilisateurProvince" Association="ModeleCSL.UtilisateurProvince">
+            <End Role="Utilisateur" EntitySet="UtilisateurJeu" />
+            <End Role="Province" EntitySet="ProvinceJeu" />
+          </AssociationSet>
+          <EntitySet Name="MembreFamilleJeu1" EntityType="ModeleCSL.MembreFamille" />
+          <AssociationSet Name="UtilisateurmembreFamille" Association="ModeleCSL.UtilisateurmembreFamille">
+            <End Role="Utilisateur" EntitySet="UtilisateurJeu" />
+            <End Role="membreFamille" EntitySet="MembreFamilleJeu1" />
+          </AssociationSet>
+          <EntitySet Name="NouvelleJeu" EntityType="ModeleCSL.Nouvelle" />
+          <AssociationSet Name="UtilisateurNouvelle" Association="ModeleCSL.UtilisateurNouvelle">
+            <End Role="Utilisateur" EntitySet="UtilisateurJeu" />
+            <End Role="Nouvelle" EntitySet="NouvelleJeu" />
+          </AssociationSet>
+          <EntitySet Name="CommandeJeu" EntityType="ModeleCSL.Commande" />
+          <AssociationSet Name="UtilisateurCommande" Association="ModeleCSL.UtilisateurCommande">
+            <End Role="Utilisateur" EntitySet="UtilisateurJeu" />
+            <End Role="Commande" EntitySet="CommandeJeu" />
+          </AssociationSet>
+          <EntitySet Name="CarteJeu" EntityType="ModeleCSL.Carte" />
+          <AssociationSet Name="CommandeCarte" Association="ModeleCSL.CommandeCarte">
+            <End Role="Commande" EntitySet="CommandeJeu" />
+            <End Role="Carte" EntitySet="CarteJeu" />
+          </AssociationSet>
+          <EntitySet Name="ElementsCommandeJeu" EntityType="ModeleCSL.ElementsCommande" />
+          <AssociationSet Name="CommandeElementsCommande" Association="ModeleCSL.CommandeElementsCommande">
+            <End Role="Commande" EntitySet="CommandeJeu" />
+            <End Role="ElementsCommande" EntitySet="ElementsCommandeJeu" />
+          </AssociationSet>
+          <EntitySet Name="GroupeJeu" EntityType="ModeleCSL.Groupe" />
+          <AssociationSet Name="GroupeElementsCommande" Association="ModeleCSL.GroupeElementsCommande">
+            <End Role="Groupe" EntitySet="GroupeJeu" />
+            <End Role="ElementsCommande" EntitySet="ElementsCommandeJeu" />
+          </AssociationSet>
+          <EntitySet Name="ActiviteJeu" EntityType="ModeleCSL.Activite" />
+          <EntitySet Name="TypeActiviteJeu" EntityType="ModeleCSL.TypeActivite" />
+          <AssociationSet Name="ActiviteTypeActivite" Association="ModeleCSL.ActiviteTypeActivite">
+            <End Role="Activite" EntitySet="ActiviteJeu" />
+            <End Role="TypeActivite" EntitySet="TypeActiviteJeu" />
+          </AssociationSet>
+          <AssociationSet Name="GroupeActivite" Association="ModeleCSL.GroupeActivite">
+            <End Role="Groupe" EntitySet="GroupeJeu" />
+            <End Role="Activite" EntitySet="ActiviteJeu" />
+          </AssociationSet>
+          <EntitySet Name="ReservationJeu" EntityType="ModeleCSL.Reservation" />
+          <AssociationSet Name="GroupeReservation" Association="ModeleCSL.GroupeReservation">
+            <End Role="Groupe" EntitySet="GroupeJeu" />
+            <End Role="Reservation" EntitySet="ReservationJeu" />
+          </AssociationSet>
+          <EntitySet Name="LocalJeu" EntityType="ModeleCSL.Local" />
+          <AssociationSet Name="ReservationLocal" Association="ModeleCSL.ReservationLocal">
+            <End Role="Reservation" EntitySet="ReservationJeu" />
+            <End Role="Local" EntitySet="LocalJeu" />
+          </AssociationSet>
+          <EntitySet Name="JourJeu" EntityType="ModeleCSL.Jour" />
+          <AssociationSet Name="ReservationJour" Association="ModeleCSL.ReservationJour">
+            <End Role="Reservation" EntitySet="ReservationJeu" />
+            <End Role="Jour" EntitySet="JourJeu" />
+          </AssociationSet>
+          <EntitySet Name="SessionJeu" EntityType="ModeleCSL.Session" />
+          <AssociationSet Name="ReservationSession" Association="ModeleCSL.ReservationSession">
+            <End Role="Reservation" EntitySet="ReservationJeu" />
+            <End Role="Session" EntitySet="SessionJeu" />
+          </AssociationSet>
+          <EntitySet Name="TypeUtilisateurJeu" EntityType="ModeleCSL.TypeUtilisateur" />
+          <AssociationSet Name="UtilisateurTypeUtilisateur" Association="ModeleCSL.UtilisateurTypeUtilisateur">
+            <End Role="Utilisateur" EntitySet="UtilisateurJeu" />
+            <End Role="TypeUtilisateur" EntitySet="TypeUtilisateurJeu" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Utilisateur">
+          <Key>
+            <PropertyRef Name="idUtilisateur" />
+          </Key>
+          <Property Type="Int32" Name="idUtilisateur" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="identifiant" Nullable="false" />
+          <Property Type="String" Name="prenom" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nom" Nullable="false" MaxLength="75" />
+          <Property Type="String" Name="noCivique" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="rue" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ville" Nullable="false" MaxLength="75" />
+          <Property Type="String" Name="codePostal" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="noTelephone" Nullable="false" MaxLength="10" />
+          <Property Type="DateTime" Name="dateNaissance" Nullable="false" />
+          <Property Type="DateTime" Name="dateAdhesion" Nullable="false" />
+          <Property Type="String" Name="motPasse" Nullable="false" />
+          <NavigationProperty Name="Province" Relationship="ModeleCSL.UtilisateurProvince" FromRole="Utilisateur" ToRole="Province" />
+          <NavigationProperty Name="membreFamille" Relationship="ModeleCSL.UtilisateurmembreFamille" FromRole="Utilisateur" ToRole="membreFamille" />
+          <NavigationProperty Name="Nouvelle" Relationship="ModeleCSL.UtilisateurNouvelle" FromRole="Utilisateur" ToRole="Nouvelle" />
+          <NavigationProperty Name="Commande" Relationship="ModeleCSL.UtilisateurCommande" FromRole="Utilisateur" ToRole="Commande" />
+          <NavigationProperty Name="TypeUtilisateur" Relationship="ModeleCSL.UtilisateurTypeUtilisateur" FromRole="Utilisateur" ToRole="TypeUtilisateur" />
+        </EntityType>
+        <EntityType Name="Province">
+          <Key>
+            <PropertyRef Name="idProvince" />
+          </Key>
+          <Property Type="Int32" Name="idProvince" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nomProvince" Nullable="false" MaxLength="25" />
+          <NavigationProperty Name="Utilisateur" Relationship="ModeleCSL.UtilisateurProvince" FromRole="Province" ToRole="Utilisateur" />
+        </EntityType>
+        <Association Name="UtilisateurProvince">
+          <End Type="ModeleCSL.Utilisateur" Role="Utilisateur" Multiplicity="1" />
+          <End Type="ModeleCSL.Province" Role="Province" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Employe" BaseType="ModeleCSL.Utilisateur">
+          <Property Type="Int32" Name="noEmploye" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="dateEmbauche" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MembreFamille">
+          <Key>
+            <PropertyRef Name="idMembreFamille" />
+          </Key>
+          <Property Type="String" Name="nomMembreFamille" Nullable="false" />
+          <Property Type="String" Name="prenomMembreFamille" Nullable="false" />
+          <Property Type="DateTime" Name="dateNaissanceMembreFamille" Nullable="false" />
+          <Property Type="DateTime" Name="dateAdhesionMembreFamille" Nullable="false" />
+          <Property Type="Boolean" Name="estConjoint" Nullable="false" />
+          <Property Type="Int32" Name="idMembreFamille" Nullable="false" />
+          <NavigationProperty Name="Utilisateur" Relationship="ModeleCSL.UtilisateurmembreFamille" FromRole="membreFamille" ToRole="Utilisateur" />
+        </EntityType>
+        <Association Name="UtilisateurmembreFamille">
+          <End Type="ModeleCSL.Utilisateur" Role="Utilisateur" Multiplicity="1" />
+          <End Type="ModeleCSL.MembreFamille" Role="membreFamille" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Nouvelle">
+          <Key>
+            <PropertyRef Name="idNouvelle" />
+          </Key>
+          <Property Type="Int32" Name="idNouvelle" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="titreFr" Nullable="false" />
+          <Property Type="DateTime" Name="date" Nullable="false" />
+          <Property Type="String" Name="texteFr" Nullable="false" />
+          <Property Type="String" Name="titreEn" Nullable="false" />
+          <Property Type="String" Name="texteEn" Nullable="false" />
+          <NavigationProperty Name="Utilisateur" Relationship="ModeleCSL.UtilisateurNouvelle" FromRole="Nouvelle" ToRole="Utilisateur" />
+        </EntityType>
+        <Association Name="UtilisateurNouvelle">
+          <End Type="ModeleCSL.Utilisateur" Role="Utilisateur" Multiplicity="1" />
+          <End Type="ModeleCSL.Nouvelle" Role="Nouvelle" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Commande">
+          <Key>
+            <PropertyRef Name="noCommande" />
+          </Key>
+          <Property Type="Int32" Name="noCommande" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="dateCommande" Nullable="false" />
+          <Property Type="Int32" Name="noCarte" Nullable="false" />
+          <Property Type="Int32" Name="moisExpiration" Nullable="false" />
+          <Property Type="Int32" Name="anneeExpiration" Nullable="false" />
+          <NavigationProperty Name="Utilisateur" Relationship="ModeleCSL.UtilisateurCommande" FromRole="Commande" ToRole="Utilisateur" />
+          <NavigationProperty Name="Carte" Relationship="ModeleCSL.CommandeCarte" FromRole="Commande" ToRole="Carte" />
+          <NavigationProperty Name="ElementsCommande" Relationship="ModeleCSL.CommandeElementsCommande" FromRole="Commande" ToRole="ElementsCommande" />
+          <Property Type="String" Name="titulaireCarte" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="UtilisateurCommande">
+          <End Type="ModeleCSL.Utilisateur" Role="Utilisateur" Multiplicity="1" />
+          <End Type="ModeleCSL.Commande" Role="Commande" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Carte">
+          <Key>
+            <PropertyRef Name="idCarte" />
+          </Key>
+          <Property Type="Int32" Name="idCarte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nomCarte" Nullable="false" />
+          <NavigationProperty Name="Commande" Relationship="ModeleCSL.CommandeCarte" FromRole="Carte" ToRole="Commande" />
+        </EntityType>
+        <Association Name="CommandeCarte">
+          <End Type="ModeleCSL.Commande" Role="Commande" Multiplicity="1" />
+          <End Type="ModeleCSL.Carte" Role="Carte" Multiplicity="1" />
+        </Association>
+        <EntityType Name="ElementsCommande">
+          <Key>
+            <PropertyRef Name="idElementCommande" />
+          </Key>
+          <Property Type="DateTime" Name="dateAjout" Nullable="false" />
+          <Property Type="Decimal" Name="prixPaye" Nullable="false" />
+          <NavigationProperty Name="Commande" Relationship="ModeleCSL.CommandeElementsCommande" FromRole="ElementsCommande" ToRole="Commande" />
+          <NavigationProperty Name="Groupe" Relationship="ModeleCSL.GroupeElementsCommande" FromRole="ElementsCommande" ToRole="Groupe" />
+          <Property Type="Int32" Name="idElementCommande" Nullable="false" />
+        </EntityType>
+        <Association Name="CommandeElementsCommande">
+          <End Type="ModeleCSL.Commande" Role="Commande" Multiplicity="1" />
+          <End Type="ModeleCSL.ElementsCommande" Role="ElementsCommande" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Groupe">
+          <Key>
+            <PropertyRef Name="idGroupe" />
+          </Key>
+          <Property Type="Int32" Name="idGroupe" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="capaciteGroupe" Nullable="false" />
+          <Property Type="String" Name="commentaire" Nullable="true" />
+          <NavigationProperty Name="ElementsCommande" Relationship="ModeleCSL.GroupeElementsCommande" FromRole="Groupe" ToRole="ElementsCommande" />
+          <NavigationProperty Name="Activite" Relationship="ModeleCSL.GroupeActivite" FromRole="Groupe" ToRole="Activite" />
+          <NavigationProperty Name="Reservation" Relationship="ModeleCSL.GroupeReservation" FromRole="Groupe" ToRole="Reservation" />
+        </EntityType>
+        <Association Name="GroupeElementsCommande">
+          <End Type="ModeleCSL.Groupe" Role="Groupe" Multiplicity="1" />
+          <End Type="ModeleCSL.ElementsCommande" Role="ElementsCommande" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Activite">
+          <Key>
+            <PropertyRef Name="idActivite" />
+          </Key>
+          <Property Type="Int32" Name="idActivite" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nomActiviteFr" Nullable="false" />
+          <Property Type="String" Name="nomActiviteEn" Nullable="false" />
+          <Property Type="String" Name="descriptionActiviteFr" Nullable="false" />
+          <Property Type="String" Name="descriptionActiviteEn" Nullable="false" />
+          <Property Type="Int32" Name="ageMinimum" Nullable="false" />
+          <Property Type="Int32" Name="ageMaximum" Nullable="false" />
+          <Property Type="Boolean" Name="sessionHiver" Nullable="false" />
+          <Property Type="Boolean" Name="sessionPrintemps" Nullable="false" />
+          <Property Type="Boolean" Name="sessionEte" Nullable="false" />
+          <Property Type="Boolean" Name="sessionAutomne" Nullable="false" />
+          <Property Type="Decimal" Name="prix" Nullable="false" />
+          <Property Type="DateTime" Name="dateDebut" Nullable="false" />
+          <Property Type="DateTime" Name="dateFin" Nullable="false" />
+          <NavigationProperty Name="TypeActivite" Relationship="ModeleCSL.ActiviteTypeActivite" FromRole="Activite" ToRole="TypeActivite" />
+          <NavigationProperty Name="Groupe" Relationship="ModeleCSL.GroupeActivite" FromRole="Activite" ToRole="Groupe" />
+        </EntityType>
+        <EntityType Name="TypeActivite">
+          <Key>
+            <PropertyRef Name="idType" />
+          </Key>
+          <Property Type="Int32" Name="idType" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nomType" Nullable="false" />
+          <NavigationProperty Name="Activite" Relationship="ModeleCSL.ActiviteTypeActivite" FromRole="TypeActivite" ToRole="Activite" />
+        </EntityType>
+        <Association Name="ActiviteTypeActivite">
+          <End Type="ModeleCSL.Activite" Role="Activite" Multiplicity="1" />
+          <End Type="ModeleCSL.TypeActivite" Role="TypeActivite" Multiplicity="1" />
+        </Association>
+        <Association Name="GroupeActivite">
+          <End Type="ModeleCSL.Groupe" Role="Groupe" Multiplicity="1" />
+          <End Type="ModeleCSL.Activite" Role="Activite" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="idReservation" />
+          </Key>
+          <Property Type="Int32" Name="idReservation" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Time" Name="heureDebut" Nullable="false" />
+          <Property Type="Time" Name="heureFin" Nullable="false" />
+          <Property Type="DateTime" Name="dateReservation" Nullable="true" />
+          <NavigationProperty Name="Groupe" Relationship="ModeleCSL.GroupeReservation" FromRole="Reservation" ToRole="Groupe" />
+          <NavigationProperty Name="Local" Relationship="ModeleCSL.ReservationLocal" FromRole="Reservation" ToRole="Local" />
+          <NavigationProperty Name="Jour" Relationship="ModeleCSL.ReservationJour" FromRole="Reservation" ToRole="Jour" />
+          <NavigationProperty Name="Session" Relationship="ModeleCSL.ReservationSession" FromRole="Reservation" ToRole="Session" />
+        </EntityType>
+        <Association Name="GroupeReservation">
+          <End Type="ModeleCSL.Groupe" Role="Groupe" Multiplicity="1" />
+          <End Type="ModeleCSL.Reservation" Role="Reservation" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Local">
+          <Key>
+            <PropertyRef Name="idLocal" />
+          </Key>
+          <Property Type="Int32" Name="idLocal" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="descriptionLocal" Nullable="true" />
+          <Property Type="Boolean" Name="reservableClient" Nullable="false" />
+          <Property Type="String" Name="nomLocal" Nullable="false" />
+          <Property Type="Int32" Name="capaciteMax" Nullable="false" />
+          <NavigationProperty Name="Reservation" Relationship="ModeleCSL.ReservationLocal" FromRole="Local" ToRole="Reservation" />
+        </EntityType>
+        <Association Name="ReservationLocal">
+          <End Type="ModeleCSL.Reservation" Role="Reservation" Multiplicity="1" />
+          <End Type="ModeleCSL.Local" Role="Local" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Jour">
+          <Key>
+            <PropertyRef Name="idJour" />
+          </Key>
+          <Property Type="Int32" Name="idJour" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nomJourFr" Nullable="false" />
+          <Property Type="String" Name="nomJourEn" Nullable="false" />
+          <NavigationProperty Name="Reservation" Relationship="ModeleCSL.ReservationJour" FromRole="Jour" ToRole="Reservation" />
+        </EntityType>
+        <Association Name="ReservationJour">
+          <End Type="ModeleCSL.Reservation" Role="Reservation" Multiplicity="1" />
+          <End Type="ModeleCSL.Jour" Role="Jour" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="idSession" />
+          </Key>
+          <Property Type="Int32" Name="idSession" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="dateDebut" Nullable="false" />
+          <Property Type="DateTime" Name="dateFin" Nullable="false" />
+          <Property Type="String" Name="nomSession" Nullable="false" />
+          <NavigationProperty Name="Reservation" Relationship="ModeleCSL.ReservationSession" FromRole="Session" ToRole="Reservation" />
+        </EntityType>
+        <Association Name="ReservationSession">
+          <End Type="ModeleCSL.Reservation" Role="Reservation" Multiplicity="1" />
+          <End Type="ModeleCSL.Session" Role="Session" Multiplicity="1" />
+        </Association>
+        <EntityType Name="TypeUtilisateur">
+          <Key>
+            <PropertyRef Name="idType" />
+          </Key>
+          <Property Type="Int32" Name="idType" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nomType" Nullable="false" />
+          <NavigationProperty Name="Utilisateur" Relationship="ModeleCSL.UtilisateurTypeUtilisateur" FromRole="TypeUtilisateur" ToRole="Utilisateur" />
+        </EntityType>
+        <Association Name="UtilisateurTypeUtilisateur">
+          <End Type="ModeleCSL.Utilisateur" Role="Utilisateur" Multiplicity="1" />
+          <End Type="ModeleCSL.TypeUtilisateur" Role="TypeUtilisateur" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModeleCSLStoreContainer" CdmEntityContainer="ModeleCSLContainer">
+    <EntitySetMapping Name="UtilisateurJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Utilisateur)">
+        <MappingFragment StoreEntitySet="UtilisateurJeu">
+          <ScalarProperty Name="idUtilisateur" ColumnName="idUtilisateur" />
+          <ScalarProperty Name="identifiant" ColumnName="identifiant" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noCivique" ColumnName="noCivique" />
+          <ScalarProperty Name="rue" ColumnName="rue" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="codePostal" ColumnName="codePostal" />
+          <ScalarProperty Name="noTelephone" ColumnName="noTelephone" />
+          <ScalarProperty Name="dateNaissance" ColumnName="dateNaissance" />
+          <ScalarProperty Name="dateAdhesion" ColumnName="dateAdhesion" />
+          <ScalarProperty Name="motPasse" ColumnName="motPasse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Employe)">
+        <MappingFragment StoreEntitySet="UtilisateurJeu_Employe">
+          <ScalarProperty Name="idUtilisateur" ColumnName="idUtilisateur" />
+          <ScalarProperty Name="noEmploye" ColumnName="noEmploye" />
+          <ScalarProperty Name="dateEmbauche" ColumnName="dateEmbauche" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProvinceJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Province)">
+        <MappingFragment StoreEntitySet="ProvinceJeu">
+          <ScalarProperty Name="idProvince" ColumnName="idProvince" />
+          <ScalarProperty Name="nomProvince" ColumnName="nomProvince" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MembreFamilleJeu1">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.MembreFamille)">
+        <MappingFragment StoreEntitySet="MembreFamilleJeu1">
+          <ScalarProperty Name="idMembreFamille" ColumnName="idMembreFamille" />
+          <ScalarProperty Name="nomMembreFamille" ColumnName="nomMembreFamille" />
+          <ScalarProperty Name="prenomMembreFamille" ColumnName="prenomMembreFamille" />
+          <ScalarProperty Name="dateNaissanceMembreFamille" ColumnName="dateNaissanceMembreFamille" />
+          <ScalarProperty Name="dateAdhesionMembreFamille" ColumnName="dateAdhesionMembreFamille" />
+          <ScalarProperty Name="estConjoint" ColumnName="estConjoint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NouvelleJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Nouvelle)">
+        <MappingFragment StoreEntitySet="NouvelleJeu">
+          <ScalarProperty Name="idNouvelle" ColumnName="idNouvelle" />
+          <ScalarProperty Name="titreFr" ColumnName="titreFr" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="texteFr" ColumnName="texteFr" />
+          <ScalarProperty Name="titreEn" ColumnName="titreEn" />
+          <ScalarProperty Name="texteEn" ColumnName="texteEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommandeJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Commande)">
+        <MappingFragment StoreEntitySet="CommandeJeu">
+          <ScalarProperty Name="titulaireCarte" ColumnName="titulaireCarte" />
+                <ScalarProperty Name="noCommande" ColumnName="noCommande" />
+          <ScalarProperty Name="dateCommande" ColumnName="dateCommande" />
+          <ScalarProperty Name="noCarte" ColumnName="noCarte" />
+          <ScalarProperty Name="moisExpiration" ColumnName="moisExpiration" />
+          <ScalarProperty Name="anneeExpiration" ColumnName="anneeExpiration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarteJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Carte)">
+        <MappingFragment StoreEntitySet="CarteJeu">
+          <ScalarProperty Name="idCarte" ColumnName="idCarte" />
+          <ScalarProperty Name="nomCarte" ColumnName="nomCarte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElementsCommandeJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.ElementsCommande)">
+        <MappingFragment StoreEntitySet="ElementsCommandeJeu">
+          <ScalarProperty Name="idElementCommande" ColumnName="idElementCommande" />
+          <ScalarProperty Name="dateAjout" ColumnName="dateAjout" />
+          <ScalarProperty Name="prixPaye" ColumnName="prixPaye" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupeJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Groupe)">
+        <MappingFragment StoreEntitySet="GroupeJeu">
+          <ScalarProperty Name="idGroupe" ColumnName="idGroupe" />
+          <ScalarProperty Name="capaciteGroupe" ColumnName="capaciteGroupe" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActiviteJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Activite)">
+        <MappingFragment StoreEntitySet="ActiviteJeu">
+          <ScalarProperty Name="idActivite" ColumnName="idActivite" />
+          <ScalarProperty Name="nomActiviteFr" ColumnName="nomActiviteFr" />
+          <ScalarProperty Name="nomActiviteEn" ColumnName="nomActiviteEn" />
+          <ScalarProperty Name="descriptionActiviteFr" ColumnName="descriptionActiviteFr" />
+          <ScalarProperty Name="descriptionActiviteEn" ColumnName="descriptionActiviteEn" />
+          <ScalarProperty Name="ageMinimum" ColumnName="ageMinimum" />
+          <ScalarProperty Name="ageMaximum" ColumnName="ageMaximum" />
+          <ScalarProperty Name="sessionHiver" ColumnName="sessionHiver" />
+          <ScalarProperty Name="sessionPrintemps" ColumnName="sessionPrintemps" />
+          <ScalarProperty Name="sessionEte" ColumnName="sessionEte" />
+          <ScalarProperty Name="sessionAutomne" ColumnName="sessionAutomne" />
+          <ScalarProperty Name="prix" ColumnName="prix" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="dateFin" ColumnName="dateFin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeActiviteJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.TypeActivite)">
+        <MappingFragment StoreEntitySet="TypeActiviteJeu">
+          <ScalarProperty Name="idType" ColumnName="idType" />
+          <ScalarProperty Name="nomType" ColumnName="nomType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReservationJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Reservation)">
+        <MappingFragment StoreEntitySet="ReservationJeu">
+          <ScalarProperty Name="idReservation" ColumnName="idReservation" />
+          <ScalarProperty Name="heureDebut" ColumnName="heureDebut" />
+          <ScalarProperty Name="heureFin" ColumnName="heureFin" />
+          <ScalarProperty Name="dateReservation" ColumnName="dateReservation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocalJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Local)">
+        <MappingFragment StoreEntitySet="LocalJeu">
+          <ScalarProperty Name="idLocal" ColumnName="idLocal" />
+          <ScalarProperty Name="descriptionLocal" ColumnName="descriptionLocal" />
+          <ScalarProperty Name="reservableClient" ColumnName="reservableClient" />
+          <ScalarProperty Name="nomLocal" ColumnName="nomLocal" />
+          <ScalarProperty Name="capaciteMax" ColumnName="capaciteMax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JourJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Jour)">
+        <MappingFragment StoreEntitySet="JourJeu">
+          <ScalarProperty Name="idJour" ColumnName="idJour" />
+          <ScalarProperty Name="nomJourFr" ColumnName="nomJourFr" />
+          <ScalarProperty Name="nomJourEn" ColumnName="nomJourEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.Session)">
+        <MappingFragment StoreEntitySet="SessionJeu">
+          <ScalarProperty Name="idSession" ColumnName="idSession" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="dateFin" ColumnName="dateFin" />
+          <ScalarProperty Name="nomSession" ColumnName="nomSession" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeUtilisateurJeu">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeleCSL.TypeUtilisateur)">
+        <MappingFragment StoreEntitySet="TypeUtilisateurJeu">
+          <ScalarProperty Name="idType" ColumnName="idType" />
+          <ScalarProperty Name="nomType" ColumnName="nomType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UtilisateurProvince" TypeName="ModeleCSL.UtilisateurProvince" StoreEntitySet="UtilisateurJeu">
+      <EndProperty Name="Province">
+        <ScalarProperty Name="idProvince" ColumnName="Province_idProvince" />
+      </EndProperty>
+      <EndProperty Name="Utilisateur">
+        <ScalarProperty Name="idUtilisateur" ColumnName="idUtilisateur" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UtilisateurmembreFamille" TypeName="ModeleCSL.UtilisateurmembreFamille" StoreEntitySet="MembreFamilleJeu1">
+      <EndProperty Name="Utilisateur">
+        <ScalarProperty Name="idUtilisateur" ColumnName="Utilisateur_idUtilisateur" />
+      </EndProperty>
+      <EndProperty Name="membreFamille">
+        <ScalarProperty Name="idMembreFamille" ColumnName="idMembreFamille" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UtilisateurNouvelle" TypeName="ModeleCSL.UtilisateurNouvelle" StoreEntitySet="NouvelleJeu">
+      <EndProperty Name="Utilisateur">
+        <ScalarProperty Name="idUtilisateur" ColumnName="Utilisateur_idUtilisateur" />
+      </EndProperty>
+      <EndProperty Name="Nouvelle">
+        <ScalarProperty Name="idNouvelle" ColumnName="idNouvelle" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UtilisateurCommande" TypeName="ModeleCSL.UtilisateurCommande" StoreEntitySet="CommandeJeu">
+      <EndProperty Name="Utilisateur">
+        <ScalarProperty Name="idUtilisateur" ColumnName="Utilisateur_idUtilisateur" />
+      </EndProperty>
+      <EndProperty Name="Commande">
+        <ScalarProperty Name="noCommande" ColumnName="noCommande" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CommandeCarte" TypeName="ModeleCSL.CommandeCarte" StoreEntitySet="CommandeJeu">
+      <EndProperty Name="Carte">
+        <ScalarProperty Name="idCarte" ColumnName="Carte_idCarte" />
+      </EndProperty>
+      <EndProperty Name="Commande">
+        <ScalarProperty Name="noCommande" ColumnName="noCommande" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CommandeElementsCommande" TypeName="ModeleCSL.CommandeElementsCommande" StoreEntitySet="ElementsCommandeJeu">
+      <EndProperty Name="Commande">
+        <ScalarProperty Name="noCommande" ColumnName="Commande_noCommande" />
+      </EndProperty>
+      <EndProperty Name="ElementsCommande">
+        <ScalarProperty Name="idElementCommande" ColumnName="idElementCommande" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GroupeElementsCommande" TypeName="ModeleCSL.GroupeElementsCommande" StoreEntitySet="ElementsCommandeJeu">
+      <EndProperty Name="Groupe">
+        <ScalarProperty Name="idGroupe" ColumnName="Groupe_idGroupe" />
+      </EndProperty>
+      <EndProperty Name="ElementsCommande">
+        <ScalarProperty Name="idElementCommande" ColumnName="idElementCommande" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ActiviteTypeActivite" TypeName="ModeleCSL.ActiviteTypeActivite" StoreEntitySet="ActiviteJeu">
+      <EndProperty Name="TypeActivite">
+        <ScalarProperty Name="idType" ColumnName="TypeActivite_idType" />
+      </EndProperty>
+      <EndProperty Name="Activite">
+        <ScalarProperty Name="idActivite" ColumnName="idActivite" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GroupeActivite" TypeName="ModeleCSL.GroupeActivite" StoreEntitySet="GroupeJeu">
+      <EndProperty Name="Activite">
+        <ScalarProperty Name="idActivite" ColumnName="Activite_idActivite" />
+      </EndProperty>
+      <EndProperty Name="Groupe">
+        <ScalarProperty Name="idGroupe" ColumnName="idGroupe" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GroupeReservation" TypeName="ModeleCSL.GroupeReservation" StoreEntitySet="ReservationJeu">
+      <EndProperty Name="Groupe">
+        <ScalarProperty Name="idGroupe" ColumnName="Groupe_idGroupe" />
+      </EndProperty>
+      <EndProperty Name="Reservation">
+        <ScalarProperty Name="idReservation" ColumnName="idReservation" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ReservationLocal" TypeName="ModeleCSL.ReservationLocal" StoreEntitySet="ReservationJeu">
+      <EndProperty Name="Local">
+        <ScalarProperty Name="idLocal" ColumnName="Local_idLocal" />
+      </EndProperty>
+      <EndProperty Name="Reservation">
+        <ScalarProperty Name="idReservation" ColumnName="idReservation" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ReservationJour" TypeName="ModeleCSL.ReservationJour" StoreEntitySet="ReservationJeu">
+      <EndProperty Name="Jour">
+        <ScalarProperty Name="idJour" ColumnName="Jour_idJour" />
+      </EndProperty>
+      <EndProperty Name="Reservation">
+        <ScalarProperty Name="idReservation" ColumnName="idReservation" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ReservationSession" TypeName="ModeleCSL.ReservationSession" StoreEntitySet="ReservationJeu">
+      <EndProperty Name="Session">
+        <ScalarProperty Name="idSession" ColumnName="Session_idSession" />
+      </EndProperty>
+      <EndProperty Name="Reservation">
+        <ScalarProperty Name="idReservation" ColumnName="idReservation" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UtilisateurTypeUtilisateur" TypeName="ModeleCSL.UtilisateurTypeUtilisateur" StoreEntitySet="UtilisateurJeu">
+      <EndProperty Name="TypeUtilisateur">
+        <ScalarProperty Name="idType" ColumnName="TypeUtilisateur_idType" />
+      </EndProperty>
+      <EndProperty Name="Utilisateur">
+        <ScalarProperty Name="idUtilisateur" ColumnName="idUtilisateur" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="ModeleCSL" >
+        <EntityTypeShape EntityType="ModeleCSL.Utilisateur" Width="1.5" PointX="1.125" PointY="0.5" Height="4.0956022135416656" />
+        <EntityTypeShape EntityType="ModeleCSL.Province" Width="1.5" PointX="3.5" PointY="0.5" Height="1.4033821614583331" />
+        <AssociationConnector Association="ModeleCSL.UtilisateurProvince">
+          <ConnectorPoint PointX="2.625" PointY="1.297841796875" />
+          <ConnectorPoint PointX="3.5" PointY="1.297841796875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.Employe" Width="1.5" PointX="3.5" PointY="2.375" Height="1.4033821614583331" />
+        <InheritanceConnector EntityType="ModeleCSL.Employe" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.625" PointY="3.0766910807291667" />
+          <ConnectorPoint PointX="3.5" PointY="3.0766910807291667" />
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="ModeleCSL.MembreFamille" Width="1.5" PointX="3.5" PointY="4.25" Height="2.1725878906249996" />
+        <AssociationConnector Association="ModeleCSL.UtilisateurmembreFamille">
+          <ConnectorPoint PointX="2.625" PointY="4.4228011067708328" />
+          <ConnectorPoint PointX="3.5" PointY="4.4228011067708328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.Nouvelle" Width="1.5" PointX="0.75" PointY="5.75" Height="2.1725878906249996" />
+        <AssociationConnector Association="ModeleCSL.UtilisateurNouvelle">
+          <ConnectorPoint PointX="1.6875" PointY="4.5956022135416656" />
+          <ConnectorPoint PointX="1.6875" PointY="5.75" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.Commande" Width="1.5" PointX="5.625" PointY="0.625" Height="1.9802864583333331" />
+        <AssociationConnector Association="ModeleCSL.UtilisateurCommande">
+          <ConnectorPoint PointX="2.625" PointY="2.235341796875" />
+          <ConnectorPoint PointX="5.625" PointY="2.235341796875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.Carte" Width="1.5" PointX="8.125" PointY="0.625" Height="1.4033821614583331" />
+        <AssociationConnector Association="ModeleCSL.CommandeCarte">
+          <ConnectorPoint PointX="7.125" PointY="1.422841796875" />
+          <ConnectorPoint PointX="8.125" PointY="1.422841796875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.ElementsCommande" Width="1.5" PointX="5.625" PointY="3.75" Height="1.9802864583333326" />
+        <AssociationConnector Association="ModeleCSL.CommandeElementsCommande">
+          <ConnectorPoint PointX="6.375" PointY="3.1821907552083331" />
+          <ConnectorPoint PointX="6.375" PointY="3.75" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.Groupe" Width="1.5" PointX="5.625" PointY="6.375" Height="1.7879850260416665" />
+        <AssociationConnector Association="ModeleCSL.GroupeElementsCommande">
+          <ConnectorPoint PointX="6.375" PointY="6.375" />
+          <ConnectorPoint PointX="6.375" PointY="5.7302864583333326" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.Activite" Width="1.5" PointX="8.125" PointY="3.125" Height="3.7109993489583326" />
+        <EntityTypeShape EntityType="ModeleCSL.TypeActivite" Width="1.5" PointX="10.25" PointY="3.125" Height="1.4033821614583326" />
+        <AssociationConnector Association="ModeleCSL.ActiviteTypeActivite">
+          <ConnectorPoint PointX="9.625" PointY="3.922841796875" />
+          <ConnectorPoint PointX="10.25" PointY="3.922841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeleCSL.GroupeActivite">
+          <ConnectorPoint PointX="7.125" PointY="6.7978011067708328" />
+          <ConnectorPoint PointX="8.125" PointY="6.7978011067708328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.Reservation" Width="1.5" PointX="3.5" PointY="7.25" Height="1.7879850260416657" />
+        <AssociationConnector Association="ModeleCSL.GroupeReservation">
+          <ConnectorPoint PointX="5.625" PointY="7.8987939453125007" />
+          <ConnectorPoint PointX="5" PointY="7.8987939453125007" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.Local" Width="1.5" PointX="8.25" PointY="7.75" Height="1.9802864583333335" />
+        <AssociationConnector Association="ModeleCSL.ReservationLocal">
+          <ConnectorPoint PointX="5" PointY="9.1124886067708317" />
+          <ConnectorPoint PointX="8.25" PointY="9.1124886067708317" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.Jour" Width="1.5" PointX="8.375" PointY="10.375" Height="1.5956835937499996" />
+        <AssociationConnector Association="ModeleCSL.ReservationJour">
+          <ConnectorPoint PointX="4.25" PointY="9.6148893229166656" />
+          <ConnectorPoint PointX="4.25" PointY="11.268992513020834" />
+          <ConnectorPoint PointX="8.375" PointY="11.268992513020834" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.Session" Width="1.5" PointX="0.75" PointY="10.25" Height="1.9802864583333317" />
+        <AssociationConnector Association="ModeleCSL.ReservationSession">
+          <ConnectorPoint PointX="3.96679484375" PointY="9.8071907552083317" />
+          <ConnectorPoint PointX="3.96679484375" PointY="10.816488306070964" />
+          <ConnectorPoint PointX="2.25" PointY="10.816488306070964" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ModeleCSL.TypeUtilisateur" Width="1.5" PointX="0.75" PointY="8.375" Height="1.4033821614583335" />
+        <AssociationConnector Association="ModeleCSL.UtilisateurTypeUtilisateur">
+          <ConnectorPoint PointX="2.6249999999999991" PointY="4.7879036458333326" />
+          <ConnectorPoint PointX="3" PointY="5.1629036458333335" />
+          <ConnectorPoint PointX="3" PointY="8" />
+          <ConnectorPoint PointX="2.6261528461538468" PointY="8" />
+          <ConnectorPoint PointX="2.25" PointY="8.3761528461538468" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
