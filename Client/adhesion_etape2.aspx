@@ -72,7 +72,7 @@
             <br />
             <br />
             <div class="lienEnBasADroite">
-            <asp:LinkButton ID="lbtn_Suivant" runat="server" Text="Étape 2 - Paiement >" PostBackUrl="#" /></div>
+            <asp:LinkButton ID="lbtn_Suivant" runat="server" Text="Étape 2 - Paiement >" PostBackUrl="adhesion_etape3.aspx" /></div>
 			</div>
     	    	
 

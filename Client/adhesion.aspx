@@ -25,7 +25,7 @@
 			</div>
             <br /> <br />
             <div align="center">
-             <asp:LinkButton ID="lbtn_Adherer" runat="server" Text="Adhérez maintenant!" PostBackUrl="#" CssClass="boutonAdherer"  />
+             <asp:LinkButton ID="lbtn_Adherer" runat="server" Text="Adhérez maintenant!" PostBackUrl="adhesion_etape2.aspx" CssClass="boutonAdherer"  />
       </div>
             <br />
             <br />
