@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
     <div id="haut">
 		<div id="hautDroit">
-			<img alt="Logotype" src="images/LogoFinal.png" height="200" width="200" class="ombre" />
+			<img runat="server" alt="Logotype" src="~/images/LogoFinal.png" height="200" width="200" class="ombre" />
 			<div id="boiteMenuLogin">
             <div id="login">
             <asp:LinkButton ID="lbtn_Langue" runat="server" PostBackUrl="~/Default.aspx" 
@@ -40,7 +40,7 @@
                             PostBackUrl="~/Default.aspx" meta:resourcekey="lbtn_ActivitesResource1" /></li>
 					<li>|</li>
 					<li><asp:LinkButton ID="lbtn_Adhesion" runat="server" Text="Adhésion" 
-                            PostBackUrl="~/Default.aspx" meta:resourcekey="lbtn_AdhesionResource1" /></li>
+                            PostBackUrl="~/Client/adhesion.aspx" meta:resourcekey="lbtn_AdhesionResource1" /></li>
 					<li>|</li>
 					<li><asp:LinkButton ID="lbtn_APropos" runat="server" Text="À propos" 
                             PostBackUrl="~/Default.aspx" meta:resourcekey="lbtn_AProposResource1" /></li>

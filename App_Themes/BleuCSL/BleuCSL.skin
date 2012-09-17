@@ -14,3 +14,7 @@ de contrôle par défaut par type de contrôle est autorisée dans le même thè
 <asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
 --%>
 <asp:TextBox runat="server" width="175px" CssClass="espacementPourTable" SkinID="champFormulaire" />
+<asp:DropDownList runat="server" SkinID="ddl_formulairePaiement" width="175px" CssClass="espacementPourTable" />
+<asp:Label runat="server" Font-Bold="true" Font-Size="xx-large" SkinID="lblTitreSectionFormulaire"/>
+<asp:Button runat="server" BorderStyle="Solid"  BackColor="#00A8FF" ForeColor="#FFFFFF" Font-Size="xx-large" SkinID="btnSoumettre" />
+<asp:Button runat="server" BorderStyle="Solid"  BackColor="#465967" ForeColor="#FFFFFF" Font-Size="xx-large" SkinID="btnAnnuler" />
